@@ -1,0 +1,26 @@
+apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+    - github:
+        ca:
+          name: ''
+        clientID: 41609f22f1ff9d6083ca
+        clientSecret:
+          name: idp-client-secret-21ptkhuk2i6fa2n8e7cb9qe6pmimtap7
+        hostname: ''
+        organizations:
+          - rawagner-org
+      mappingMethod: claim
+      name: GitHub
+      type: GitHub
+  templates:
+    error:
+      name: rosa-oauth-templates-errors
+    login:
+      name: rosa-oauth-templates-login
+    providerSelection:
+      name: rosa-oauth-templates-providers
+  tokenConfig: {}
