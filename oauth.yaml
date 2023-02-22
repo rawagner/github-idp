@@ -4,23 +4,23 @@ metadata:
   name: cluster
 spec:
   identityProviders:
-    - github:
+    - mappingMethod: claim
+      name: keycloak
+      openID:
         ca:
-          name: ''
-        clientID: 41609f22f1ff9d6083ca
+          name: keycloak-ca
+        claims:
+          email:
+            - email
+          name:
+            - name
+          preferredUsername:
+            - preferred_username
+        clientID: ocp
         clientSecret:
-          name: idp-client-secret-21ptkhuk2i6fa2n8e7cb9qe6pmimtap7
-        hostname: ''
-        organizations:
-          - rawagner-org
-      mappingMethod: claim
-      name: GitHub
-      type: GitHub
-  templates:
-    error:
-      name: rosa-oauth-templates-errors
-    login:
-      name: rosa-oauth-templates-login
-    providerSelection:
-      name: rosa-oauth-templates-providers
+          name: keycloak-secret
+        extraScopes: []
+        issuer: >-
+          https://keycloak-default.apps.rw-east.c14h.p1.openshiftapps.com/realms/master/protocol/openid-connect/auth
+      type: OpenID
   tokenConfig: {}
