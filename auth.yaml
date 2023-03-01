@@ -4,6 +4,7 @@ metadata:
   name: authentication
   annotations:
     argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: Validate=false
 
 ## ArgoCD Lua script to check health
 ## Add it to ArgoCD resource spec/resourceCustomizations
