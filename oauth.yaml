@@ -24,6 +24,6 @@ spec:
           name: keycloak-secret
         extraScopes: []
         issuer: >-
-          https://keycloak-default.apps.rw.xxcu.p1.openshiftapps.com/realms/master
+          https://keycloak-default.apps.rw.5tbz.p1.openshiftapps.com/realms/master
       type: OpenID
   tokenConfig: {}
